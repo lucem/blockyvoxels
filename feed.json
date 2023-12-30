@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Blocky voxels and other fun things",
+    "description": "",
+    "home_page_url": "https://lucem.github.io/blockyvoxels",
+    "feed_url": "https://lucem.github.io/blockyvoxels/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "lucem"
+    },
+    "items": [
+        {
+            "id": "https://lucem.github.io/blockyvoxels/hello-world.html",
+            "url": "https://lucem.github.io/blockyvoxels/hello-world.html",
+            "title": "Hello, World",
+            "summary": "Just testing",
+            "content_html": "<p>Just testing</p>\n",
+            "author": {
+                "name": "lucem"
+            },
+            "tags": [
+            ],
+            "date_published": "2023-12-30T09:34:52+01:00",
+            "date_modified": "2023-12-30T09:34:52+01:00"
+        }
+    ]
+}
