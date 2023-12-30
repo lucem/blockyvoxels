@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://lucem.github.io/blockyvoxels/test-2.html",
+            "url": "https://lucem.github.io/blockyvoxels/test-2.html",
+            "title": "Test 2",
+            "summary": "Testing my publishing toolchain",
+            "content_html": "<p>Testing my publishing toolchain</p>",
+            "author": {
+                "name": "lucem"
+            },
+            "tags": [
+            ],
+            "date_published": "2023-12-30T09:54:04+01:00",
+            "date_modified": "2023-12-30T09:54:04+01:00"
+        },
+        {
             "id": "https://lucem.github.io/blockyvoxels/hello-world.html",
             "url": "https://lucem.github.io/blockyvoxels/hello-world.html",
             "title": "Hello, World",

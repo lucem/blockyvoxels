@@ -3,12 +3,32 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-30T09:34:52+01:00</updated>
+    <updated>2023-12-30T09:54:04+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
     <id>https://lucem.github.io/blockyvoxels</id>
 
+    <entry>
+        <title>Test 2</title>
+        <author>
+            <name>lucem</name>
+        </author>
+        <link href="https://lucem.github.io/blockyvoxels/test-2.html"/>
+        <id>https://lucem.github.io/blockyvoxels/test-2.html</id>
+
+        <updated>2023-12-30T09:54:04+01:00</updated>
+            <summary>
+                <![CDATA[
+                    Testing my publishing toolchain
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Testing my publishing toolchain</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Hello, World</title>
         <author>
