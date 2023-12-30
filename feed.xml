@@ -3,12 +3,35 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-30T12:13:04+01:00</updated>
+    <updated>2023-12-30T12:32:01+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
     <id>https://lucem.github.io/blockyvoxels</id>
 
+    <entry>
+        <title>What the Game might be</title>
+        <author>
+            <name>lucem</name>
+        </author>
+        <link href="https://lucem.github.io/blockyvoxels/what-the-game-might-be.html"/>
+        <id>https://lucem.github.io/blockyvoxels/what-the-game-might-be.html</id>
+
+        <updated>2023-12-30T12:32:01+01:00</updated>
+            <summary>
+                <![CDATA[
+                    (WIP - will be amended over time) In order to not just talk about voxel stuff in a vaccuum, I think I need to outline&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>(WIP - will be amended over time)<br>In order to not just talk about voxel stuff in a vaccuum, I think I need to outline what the game idea is that this technology is used (and built) for.</p>
+<h2>A twin-stick 3rd person shooter in a voxel world</h2>
+<p>So, the essential cornerstone idea is to have a twin-stick 3rd person shooter taking place in a voxel environment. This involves partially destructible terrain, a number of moving characters on screen, weapons handling (ranged weapons only for now I think) and all the good things that go with it.<br>This is of course completely different than your essential Minecraft clone.</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Space partitioning overview</title>
         <author>
