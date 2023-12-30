@@ -14,14 +14,14 @@
             "url": "https://lucem.github.io/blockyvoxels/what-the-game-might-be.html",
             "title": "What the Game might be",
             "summary": "(WIP - will be amended over time) In order to not just talk about voxel stuff in a vaccuum, I think I need to outline&hellip;",
-            "content_html": "<p>(WIP - will be amended over time)<br>In order to not just talk about voxel stuff in a vaccuum, I think I need to outline what the game idea is that this technology is used (and built) for.</p>\n<h2>A twin-stick 3rd person shooter in a voxel world</h2>\n<p>So, the essential cornerstone idea is to have a twin-stick 3rd person shooter taking place in a voxel environment. This involves partially destructible terrain, a number of moving characters on screen, weapons handling (ranged weapons only for now I think) and all the good things that go with it.<br>This is of course completely different than your essential Minecraft clone.</p>\n<p> </p>",
+            "content_html": "<p>(WIP - will be amended over time)<br>In order to not just talk about voxel stuff in a vaccuum, I think I need to outline what the game idea is that this technology is used (and built) for.</p>\n<h2>A twin-stick 3rd person shooter in a voxel world</h2>\n<p>So, the essential cornerstone idea is to have a twin-stick 3rd person shooter taking place in a voxel environment. This involves partially destructible terrain, a number of moving characters on screen, weapons handling (ranged weapons only for now I think) and all the good things that go with it.<br>This is of course completely different than your essential Minecraft clone.</p>\n<h2>Arcade type look and feel</h2>\n<p>Realism, stay away. This game is supposed to look unrealistic. Think of stuff like stylized visuals, bright colors, and visual effects like CRT emulation with the corresponding glitches and distortions.</p>\n<p> </p>",
             "author": {
                 "name": "lucem"
             },
             "tags": [
             ],
             "date_published": "2023-12-30T12:32:01+01:00",
-            "date_modified": "2023-12-30T12:32:01+01:00"
+            "date_modified": "2023-12-30T15:19:58+01:00"
         },
         {
             "id": "https://lucem.github.io/blockyvoxels/space-partitioning-overview.html",
