@@ -3,7 +3,7 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-30T14:16:39+01:00</updated>
+    <updated>2023-12-30T15:16:13+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
@@ -40,7 +40,7 @@
         <link href="https://lucem.github.io/blockyvoxels/space-partitioning-overview.html"/>
         <id>https://lucem.github.io/blockyvoxels/space-partitioning-overview.html</id>
 
-        <updated>2023-12-30T14:16:39+01:00</updated>
+        <updated>2023-12-30T15:16:13+01:00</updated>
             <summary>
                 <![CDATA[
                     (WIP - post is under construction and will be amended over time) One of the central ideas on how my voxel engine should work is&hellip;
@@ -50,7 +50,8 @@
             <![CDATA[
                 <p>(WIP - post is under construction and will be amended over time)<br>One of the central ideas on how my voxel engine should work is the way space is partitioned and how voxel data is stored and accessed.</p>
 <h2>Chunks</h2>
-<p>Certainly, like in every other engine out there, voxels are grouped into Chunks of fixed size [Dx, Dy, Dz]. Typically, the 2D plane in which one moves is the [X,Z] plane, with Y representing the vertical direction "skywards". So, those are some of the basic assumptions about coordinate systems and their interpretation.</p>
+<p>Certainly, like in every other engine out there, voxels are grouped into Chunks of fixed size [Dx, Dy, Dz]. <span style="text-decoration: line-through;">Typically, the 2D plane in which one moves is the [X,Z] plane, with Y representing the vertical direction "skywards". So, those are some of the basic assumptions about coordinate systems and their interpretation.</span></p>
+<p>Typically, the 2D plane in which one moves is the [X,Y] plane, with Z representing the vertical direction "skywards". (Left the old paragraph in, but Z up is actually more in congruence with other unrelated things I work with, so I'll try to keep things consistent so I don't have to think too hard all the time) So, those are some of the basic assumptions about coordinate systems and their interpretation.</p>
 <p>Such a Chunk is essentially a spatial datastructure storing information about the voxels contained in them, with implicit positioning, e.g. voxels do not store their own position vector.</p>
 <p>!! This assumption at least is true for terrain !!</p>
 <p>Above the Chunk layer, we have another spatial datastructure that allows us to relate Chunks relative to each other in 3D space. This might be flat, or hierarchical, in every cases, we can query that datastructure for which Chunk is associated with a certain point in Space, retrieve the Chunk data, get a distance metric to a Chunk etc.</p>
@@ -192,7 +193,7 @@
         <link href="https://lucem.github.io/blockyvoxels/so-blocky-voxels.html"/>
         <id>https://lucem.github.io/blockyvoxels/so-blocky-voxels.html</id>
 
-        <updated>2023-12-30T10:27:04+01:00</updated>
+        <updated>2023-12-30T15:14:31+01:00</updated>
             <summary>
                 <![CDATA[
                     Yet another blocky voxels engine. That should normally be the first thought that will naturally come to your mind. You think this kind of thing&hellip;
@@ -203,6 +204,7 @@
                 <p>Yet another blocky voxels engine.</p>
 <p>That should normally be the first thought that will naturally come to your mind.<br>You think this kind of thing has been done to death? Yeah, kind of. Still, I don't care much. I've seen a lot of those effort, too, and most of them are either bad Minecraft clones, or essentially just tech demos where you fly around and are bored within a minute.</p>
 <p>I want to explore voxel based technology in a different context. So, to say this outright, my goal is not to clone Minecraft. It is however my goal to actually provide a playable game using this technology.</p>
+<p>So, why blocky voxels specifically? I think it lends itself better to a certain visual style, which is in the arcade / highly stylized, almost comic-like tradition. You would not expect games like SmashTV or Cannon Fodder to look realistic - it would take away from their appeal. With the game I have in mind, smooth and realistic visuals are a bit out of place. I think blocky voxels, consistently used throught all of the in-game elements, lend themselves better to what I have in mind.</p>
 <p>But first things first. Before there can be any game, there needs to be a solid grasp of the limitations of the technology first.</p>
 <p>So here are my foundations:</p>
 <p>C++ (maybe combined with an embedded scripting language later)<br>Moderate graphics hardware requirements<br>mesh-based rendering (no ray tracing that moderate graphics cards just can't do)<br>Less OOP than you might be comfortable with</p>
