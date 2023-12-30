@@ -3,7 +3,7 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-30T12:32:01+01:00</updated>
+    <updated>2023-12-30T13:59:43+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
@@ -40,7 +40,7 @@
         <link href="https://lucem.github.io/blockyvoxels/space-partitioning-overview.html"/>
         <id>https://lucem.github.io/blockyvoxels/space-partitioning-overview.html</id>
 
-        <updated>2023-12-30T12:13:04+01:00</updated>
+        <updated>2023-12-30T13:59:43+01:00</updated>
             <summary>
                 <![CDATA[
                     (WIP - post is under construction and will be amended over time) One of the central ideas on how my voxel engine should work is&hellip;
@@ -147,7 +147,17 @@
 <p>If we then proceed to have the World as a whole consist of several of these Maps, we easily arrive at a total World size rivaling or exceeding that of Planet Earth.<br>That is a lot of potential, but it also poses the difficult question of content creation for such a large environment.</p>
 <p>As such, these are of course only ballpark figures to estimate resulting orders of magnitude in Map and World size. In practice, these things need to be fine tuned, and maybe even allow for variations (some Maps small, some medium sized, some large - something like that). Allowing these sorts of variations however is a consideration that needs to be considered when designing the systems that ultimately bring about implementation so all of this can be handled efficiently.</p>
 <p>Something else to consider is that all of this data needs to be stored somewhere. Do we really want to create Exabytes of data and require a potential game to bring about this much data? Maybe scaling things down to drastically reduce storage requirements is a necessity, as well as efficiently compressing the data for storage.</p>
-<p> </p>
+<h2>Terrain and Models and ...</h2>
+<p>So far, the ideas presented are structured around terrain and its features. That is all well and good, but in order to have a game, a (somewhat static) environment is not enough. You need to have dynamic elements, things that move and are independent of the surrounding environment - in most cases, these are done as models. We'll see that this might not be the best approach here.</p>
+<p>Typically, models are pre-fabricated meshes, with or without animation baked in, and the textures and other material data that go along with them.<br>Now, textures and materials are also necessary for making interesting terrain, so those are resources that can be shared. (And, since one of the technology goals is to avoid binding different textures, they actually need to be shared)</p>
+<p>Textures for models typically come in the form of UV maps, so texture coordinates (uv's) are baked into the mesh data and map to something that looks like a squashed version of the model's features that is laid flat in a 2D texture.<br>That is a workable approach if you can bind a texture per model, but not really if you want to avoid constant rebinding of textures. So, any model (i use the term very loosely here) that wants to work within this engine technology needs to work with the same texture layout and approach as the terrain. Thus, UV maps are basically out of the question.</p>
+<p>Another thing of notice is that having meshed models in a voxel environment does not really provide for a lot of choherence. So, the neatest approach in that regard is to build models out of voxels as well - however, these do not conform to the strict grid alignment and ais alignment as the uniform blocks the terrain is made of, so they still need to be treated differently. Also, having models almost universally requires having animations for them, which would be very hard to do within the confines of data structures built for terrain data storage.</p>
+<p>Thus, terrain and models need to be kept seperate and treated differently.</p>
+<h2>Combining seperate things</h2>
+<p>But then, we face the problem of having models interacting with the environment they are placed in. So, even though they are seperate, they are not, and this aspect needs to be reflected in the data structures somehow.</p>
+<p>I hinted at that before a bit, there need to exist specialized data structures, each of thise optimized for certain aspects, and then other ones where common concerns require representing them together in one structure.</p>
+<p>The most obvious concern of this is having collisions. These are the basis of things like simulating physics (whether arcade style or actual simulations of realistic physics does not matter).</p>
+<p>So, usually the temptation would be to have one spatial datastructure that envelops all those aspects of the world in a unified way. This gets messy very, very quickly. Having seperate, independent data structures as silos then again also opens up another hard problem, which is synchronisation.<br>As this is an overview document, I am not going to dive too deep into this problem set right now - for now, it is sufficient to point out that these issues exist and need to be dealt with.</p>
             ]]>
         </content>
     </entry>
