@@ -10,32 +10,18 @@
     },
     "items": [
         {
-            "id": "https://lucem.github.io/blockyvoxels/test-2.html",
-            "url": "https://lucem.github.io/blockyvoxels/test-2.html",
-            "title": "Test 2",
-            "summary": "Testing my publishing toolchain",
-            "content_html": "<p>Testing my publishing toolchain</p>",
+            "id": "https://lucem.github.io/blockyvoxels/so-blocky-voxels.html",
+            "url": "https://lucem.github.io/blockyvoxels/so-blocky-voxels.html",
+            "title": "So, blocky voxels...",
+            "summary": "Yet another blocky voxels engine. That should normally be the first thought that will naturally come to your mind. You think this kind of thing&hellip;",
+            "content_html": "<p>Yet another blocky voxels engine.</p>\n<p>That should normally be the first thought that will naturally come to your mind.<br>You think this kind of thing has been done to death? Yeah, kind of. Still, I don't care much. I've seen a lot of those effort, too, and most of them are either bad Minecraft clones, or essentially just tech demos where you fly around and are bored within a minute.</p>\n<p>I want to explore voxel based technology in a different context. So, to say this outright, my goal is not to clone Minecraft. It is however my goal to actually provide a playable game using this technology.</p>\n<p>But first things first. Before there can be any game, there needs to be a solid grasp of the limitations of the technology first.</p>\n<p>So here are my foundations:</p>\n<p>C++ (maybe combined with an embedded scripting language later)<br>Moderate graphics hardware requirements<br>mesh-based rendering (no ray tracing that moderate graphics cards just can't do)<br>Less OOP than you might be comfortable with</p>\n<p>On top of that, here are some other things I already decided upon:</p>\n<p>Everything is made from voxels (yes, models too)<br>Database storage with spatial indexing for \"model\" data (\"model\" means everything that is made from voxels)<br>No texture switching (meaning the use of virtual texturing - textures possibly stored in the database as well)<br>Rendered geometry is ultimately generated on the GPU<br>Emphasis on tooling early on</p>\n<p>What I have not decided upon just yet:</p>\n<p>Roll my own rendering code or utilize existing rendering engines<br>other support libraries to go with that</p>\n<p>For now, at this point in time, I am dealing with question of algorithmic and data structure design rather than implementation.</p>\n<p> </p>",
             "author": {
                 "name": "lucem"
             },
             "tags": [
             ],
-            "date_published": "2023-12-30T09:54:04+01:00",
-            "date_modified": "2023-12-30T09:54:04+01:00"
-        },
-        {
-            "id": "https://lucem.github.io/blockyvoxels/hello-world.html",
-            "url": "https://lucem.github.io/blockyvoxels/hello-world.html",
-            "title": "Hello, World",
-            "summary": "Just testing",
-            "content_html": "<p>Just testing</p>\n",
-            "author": {
-                "name": "lucem"
-            },
-            "tags": [
-            ],
-            "date_published": "2023-12-30T09:34:52+01:00",
-            "date_modified": "2023-12-30T09:34:52+01:00"
+            "date_published": "2023-12-30T10:27:04+01:00",
+            "date_modified": "2023-12-30T10:27:04+01:00"
         }
     ]
 }

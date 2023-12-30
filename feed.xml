@@ -3,50 +3,40 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-30T09:54:04+01:00</updated>
+    <updated>2023-12-30T10:27:04+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
     <id>https://lucem.github.io/blockyvoxels</id>
 
     <entry>
-        <title>Test 2</title>
+        <title>So, blocky voxels...</title>
         <author>
             <name>lucem</name>
         </author>
-        <link href="https://lucem.github.io/blockyvoxels/test-2.html"/>
-        <id>https://lucem.github.io/blockyvoxels/test-2.html</id>
+        <link href="https://lucem.github.io/blockyvoxels/so-blocky-voxels.html"/>
+        <id>https://lucem.github.io/blockyvoxels/so-blocky-voxels.html</id>
 
-        <updated>2023-12-30T09:54:04+01:00</updated>
+        <updated>2023-12-30T10:27:04+01:00</updated>
             <summary>
                 <![CDATA[
-                    Testing my publishing toolchain
+                    Yet another blocky voxels engine. That should normally be the first thought that will naturally come to your mind. You think this kind of thing&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Testing my publishing toolchain</p>
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Hello, World</title>
-        <author>
-            <name>lucem</name>
-        </author>
-        <link href="https://lucem.github.io/blockyvoxels/hello-world.html"/>
-        <id>https://lucem.github.io/blockyvoxels/hello-world.html</id>
-
-        <updated>2023-12-30T09:34:52+01:00</updated>
-            <summary>
-                <![CDATA[
-                    Just testing
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <p>Just testing</p>
-
+                <p>Yet another blocky voxels engine.</p>
+<p>That should normally be the first thought that will naturally come to your mind.<br>You think this kind of thing has been done to death? Yeah, kind of. Still, I don't care much. I've seen a lot of those effort, too, and most of them are either bad Minecraft clones, or essentially just tech demos where you fly around and are bored within a minute.</p>
+<p>I want to explore voxel based technology in a different context. So, to say this outright, my goal is not to clone Minecraft. It is however my goal to actually provide a playable game using this technology.</p>
+<p>But first things first. Before there can be any game, there needs to be a solid grasp of the limitations of the technology first.</p>
+<p>So here are my foundations:</p>
+<p>C++ (maybe combined with an embedded scripting language later)<br>Moderate graphics hardware requirements<br>mesh-based rendering (no ray tracing that moderate graphics cards just can't do)<br>Less OOP than you might be comfortable with</p>
+<p>On top of that, here are some other things I already decided upon:</p>
+<p>Everything is made from voxels (yes, models too)<br>Database storage with spatial indexing for "model" data ("model" means everything that is made from voxels)<br>No texture switching (meaning the use of virtual texturing - textures possibly stored in the database as well)<br>Rendered geometry is ultimately generated on the GPU<br>Emphasis on tooling early on</p>
+<p>What I have not decided upon just yet:</p>
+<p>Roll my own rendering code or utilize existing rendering engines<br>other support libraries to go with that</p>
+<p>For now, at this point in time, I am dealing with question of algorithmic and data structure design rather than implementation.</p>
+<p> </p>
             ]]>
         </content>
     </entry>
