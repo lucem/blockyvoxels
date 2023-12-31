@@ -3,12 +3,71 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-31T13:21:35+01:00</updated>
+    <updated>2023-12-31T13:33:55+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
     <id>https://lucem.github.io/blockyvoxels</id>
 
+    <entry>
+        <title>What I mean by database file storage</title>
+        <author>
+            <name>lucem</name>
+        </author>
+        <link href="https://lucem.github.io/blockyvoxels/what-i-mean-by-database-file-storage.html"/>
+        <id>https://lucem.github.io/blockyvoxels/what-i-mean-by-database-file-storage.html</id>
+            <category term="info and overview"/>
+            <category term="ideas"/>
+
+        <updated>2023-12-31T13:33:55+01:00</updated>
+            <summary>
+                <![CDATA[
+                    Some people have misunderstood what I mean with storing data that tradtionally would be stored in files in a database table. So, I thought I'd&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Some people have misunderstood what I mean with storing data that tradtionally would be stored in files in a database table.</p>
+<p>So, I thought I'd clear this up in a central location to avoid future misunderstanding.</p>
+<h2>File storage in a (relational) database</h2>
+<p>It is possible to store files of any length in a database table (using Blob columns).</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 23.8163%;">ID</td>
+<td style="width: 11.9795%;">Version</td>
+<td style="width: 15.4022%;">&lt;some indexed search criterion&gt;</td>
+<td style="width: 24.3868%;">&lt;resource name&gt;</td>
+<td style="width: 24.3868%;">&lt;content as blob&gt;</td>
+</tr>
+<tr>
+<td style="width: 23.8163%;">0</td>
+<td style="width: 11.9795%;">0</td>
+<td style="width: 15.4022%;">1234</td>
+<td style="width: 24.3868%;">"empty default chunk"</td>
+<td style="width: 24.3868%;">&lt;data&gt;</td>
+</tr>
+<tr>
+<td style="width: 23.8163%;">1</td>
+<td style="width: 11.9795%;">0</td>
+<td style="width: 15.4022%;">4711</td>
+<td style="width: 24.3868%;">"some funky chunk"</td>
+<td style="width: 24.3868%;">&lt;data&gt;</td>
+</tr>
+<tr>
+<td style="width: 23.8163%;">2</td>
+<td style="width: 11.9795%;">1</td>
+<td style="width: 15.4022%;">4711</td>
+<td style="width: 24.3868%;">"some funky chunk"</td>
+<td style="width: 24.3868%;">&lt;data&gt;</td>
+</tr>
+</tbody>
+</table>
+<p>Of course, there are drawbacks to this approach.<br>Retrieving data from a database is a bit slower than directly accessing a file in the filesystem. If you try to do this over a network, this gets prohibitively slow very fast, especially if the Blobs are rather large.</p>
+<p>This is not what I intend to do. My approach is to use a local in-process database (e.g. SQLite) to do this. The somewhat higher latency for access remains, but you also gain a lot of nice things "for free". First, you don't really have to worry about writing and elaborate parser or excessive documentation on file formats. In most cases, you can just directly serialize and deserialize raw data from and to memory (unless you have pointers or references in there). Second, you get versioning of your data without any extra effort.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Chunk storage and compression (ideas - request for comment)</title>
         <author>
