@@ -3,12 +3,55 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-31T11:31:25+01:00</updated>
+    <updated>2023-12-31T12:01:05+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
     <id>https://lucem.github.io/blockyvoxels</id>
 
+    <entry>
+        <title>Data transformation - Rendering</title>
+        <author>
+            <name>lucem</name>
+        </author>
+        <link href="https://lucem.github.io/blockyvoxels/data-transformation-rendering.html"/>
+        <id>https://lucem.github.io/blockyvoxels/data-transformation-rendering.html</id>
+
+        <updated>2023-12-31T12:01:05+01:00</updated>
+            <summary>
+                <![CDATA[
+                    Coming to the meat of how data flows through the various parts of the system to finally produce an image. These steps take place on&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Coming to the meat of how data flows through the various parts of the system to finally produce an image.</p>
+<h2>CPU</h2>
+<p>These steps take place on the CPU and main memory side of the rendering process</p>
+<h3>Chunk Data and Coordinates</h3>
+<p>Raw Chunk Data consist of all voxels and their material properties per Chunk.<br>At this step, it is possible to determine<br>- which Chunks are close by (to trigger loading and unloading of Chunk data from and to disk)<br>- which Chunks are potentially visible (in camera view)</p>
+<h3>Occlusion and visibility filtering</h3>
+<p>For the potentially visible Chunks, we can filter for the outside hull, so to speak. We can entirely disregard any voxels that are occluded by other elements. This step consists essentially of two passes:<br>- determine which voxels are potentially visible<br>this will have to take transparent materials into account<br>- determine which faces of those voxels are potentially visible</p>
+<p>This usually will remain largely the same over time, and only needs to be recalculated if voxels are added or destroyed.</p>
+<p>Additional passes over this data allow for pre-calculation of lights, SSAO, determining distances between faces and the camera (pre-depth sorting) and other housekeeping.</p>
+<h3>Sorting into rendering passes</h3>
+<p>Transparent and opaque materials determine in which rendering pass faces are drawn, so they need to be sorted by this criterion. All materials need to be accounted for, if additional resources need to be uploaded or can be removed on the GPU, this is the time to do it.</p>
+<h3>Preparing GPU buffer objects</h3>
+<p>In this step, all the relevant data needed are assembled into object buffers to transfer over to the GPU. Considerable care needs to be taken here to limit bandwidth use to maintain high performance.</p>
+<h2>GPU</h2>
+<p>These steps form the processing and rendering pipeline on the GPU</p>
+<h3>Vertex processing / triangle generation</h3>
+<p>At this step, out of the information which faces to generate for which vertex, and which materials each face is made of, the actual geometry for rendering is constructed on the GPU.</p>
+<h3>Deferred rendering and shading</h3>
+<p>After generating the triangles to render, we run everything through a deferred rendering and shading pipeline.<br>This is done in two passes - opaque geometry first, then transparency after.</p>
+<h3>Overlays</h3>
+<p>Any overlays are drawn now - HUD / GUI and the like.</p>
+<h3>Post-processing</h3>
+<p>Finally, the rendered image is run through a post-processing chain (the extent of which depends on overall performance). </p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Space partitioning (for real)</title>
         <author>
