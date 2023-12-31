@@ -3,7 +3,7 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-31T13:10:52+01:00</updated>
+    <updated>2023-12-31T13:21:35+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
@@ -402,15 +402,15 @@ struct Dictionary
         <id>https://lucem.github.io/blockyvoxels/so-blocky-voxels.html</id>
             <category term="info and overview"/>
 
-        <updated>2023-12-31T13:09:56+01:00</updated>
+        <updated>2023-12-31T13:21:35+01:00</updated>
             <summary>
                 <![CDATA[
-                    Yet another blocky voxels engine. That should normally be the first thought that will naturally come to your mind. You think this kind of thing&hellip;
+                    Yet another blocky voxels engine (and game!). That should normally be the first thought that will naturally come to your mind. You think this kind&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Yet another blocky voxels engine.</p>
+                <p>Yet another blocky voxels engine (and game!).</p>
 <p>That should normally be the first thought that will naturally come to your mind.<br>You think this kind of thing has been done to death? Yeah, kind of. Still, I don't care much. I've seen a lot of those effort, too, and most of them are either bad Minecraft clones, or essentially just tech demos where you fly around and are bored within a minute.</p>
 <p>I want to explore voxel based technology in a different context. So, to say this outright, my goal is not to clone Minecraft. It is however my goal to actually provide a playable game using this technology.</p>
 <p>So, why blocky voxels specifically? I think it lends itself better to a certain visual style, which is in the arcade / highly stylized, almost comic-like tradition. You would not expect games like SmashTV or Cannon Fodder to look realistic - it would take away from their appeal. With the game I have in mind, smooth and realistic visuals are a bit out of place. I think blocky voxels, consistently used throught all of the in-game elements, lend themselves better to what I have in mind.</p>
