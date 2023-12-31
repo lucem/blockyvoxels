@@ -3,7 +3,7 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-31T10:29:32+01:00</updated>
+    <updated>2023-12-31T11:31:25+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
@@ -64,7 +64,7 @@
         <link href="https://lucem.github.io/blockyvoxels/what-the-game-might-be.html"/>
         <id>https://lucem.github.io/blockyvoxels/what-the-game-might-be.html</id>
 
-        <updated>2023-12-30T20:08:04+01:00</updated>
+        <updated>2023-12-31T11:31:25+01:00</updated>
             <summary>
                 <![CDATA[
                     (WIP - will be amended over time) In order to not just talk about voxel stuff in a vaccuum, I think I need to outline&hellip;
@@ -76,14 +76,20 @@
 <h2>A twin-stick 3rd person shooter in a voxel world</h2>
 <p>So, the essential cornerstone idea is to have a twin-stick 3rd person shooter taking place in a voxel environment. This involves partially destructible terrain, a number of moving characters on screen, weapons handling (ranged weapons only for now I think) and all the good things that go with it.<br>This is of course completely different than your essential Minecraft clone.</p>
 <h2>Arcade type look and feel</h2>
-<p>Realism, stay away. This game is supposed to look unrealistic. Think of stuff like stylized visuals, bright colors, and visual effects like CRT emulation with the corresponding glitches and distortions.</p>
+<p>Realism, stay away. This game is supposed to look unrealistic. Think of stuff like stylized visuals, bright colors, and visual effects like CRT emulation with the corresponding glitches, chromatic aberrations and distortions. Also, in the same vein, for a complete retro look and feel, some form of lower resolution rendering and upscaling would feel just right.</p>
+<p>Of course, the possible level of post-processing effects like these depends on the rendering performance as a whole, so what can be achieved depends entirely on the basic raw rendering performance achievable.</p>
 <h2>Scenario background and inspiration</h2>
 <p>The scenario the game is based upon is a lot older than the decision to make it a twin stick shooter. In fact, much older, and the idea of making this with voxels and (at least partially) destructive terrain first led to the question: what kind of game can I make in this type of environment that makes sense for the scenario and is doable for a single developer? A lot of the decisions were made with these two questions as a starting point. For example, I cannot model in traditional 3D modelling software to save my life, so I need something I can actually get some reasonable results with - and thus, modelling in voxels (after some inspiration from seeing tools like MagickaVoxel arise just around the time I was trying to come up with this stuff, of course) became the go to solution. But then, I need to animate those. The obvious answer on how to do that is skeletal animation. How do I avoid having to spend hours upon hours on modelling the same type of stuff over and over again? Well, modular models built from components that are interchangeable and give you combinatorial diversity. And so the list goes on.</p>
 <p>So, what is this mystical scenario this all was based upon? Nothing incredibly new or fancy, just reading too much Larry Niven (and, to my dismay I must confess, I have not played a single minute of Halo, so this is only peripherally influential) - Ringworld. In particular, the question on how a Dyson Ring would work as a game environment. How would such a Ring need to be constructed? How large would it be? Would a full Dyson Ring be possible (it's not, that is way too large) or a smaller version in orbit around a planet or maybe a ring around a planet (scientifically very difficult, as that would be highly unstable). So, in essence, in the beginning there was a lot of science fiction, and in that, much more science than one might think.</p>
 <p>In the end, I arrived at the following conclusions:<br>- a solid ring is infeasible and unrealistic<br>- the most feasible ring possible is in orbit of a planetary body (or in one of the Lagrange Points)<br>- such a structure would by necessity be segmented and have very high walls<br>- still, any one of those segments would be pretty damn large<br>- in effect, the walkable surface of such a ring is enormously large, as dictated by the minimum size constraints</p>
 <p>But this gives us a few constraints to work with when talking about Maps for the game:<br>- Maps are typically quite large<br>- Each Map is a part of a ring segment or a complete ring segment, so it is confined by very high walls<br>- Maps are limited in depth and there needs to be some layer of impenetrable unobtanium as a material strong enough to make a stable ring structure<br>- There must be some kind of transportation system infrastructure built into the ring itself, traversing distances inside segments and between segments<br>- In such a scifi scenario, we can take some leeway with realism and allow things like transporters, ray guns, and other fun things, as long as we don't break any obvious rules of nature - but it for sure need not be ultra-hard scifi</p>
 <p>So, this is the initial idea. A Ringworld, a segmented Dyson Ring of roughly the surface dimensions of a Planet, and as such, coming with all the nice tropes we know from scifi stuff. Now all we need is a game.</p>
-<p> </p>
+<h2>Story</h2>
+<p>In the old days, games did not need story at all. Or, very rudimentary ones at best.<br>I'm doing my best to provide some sort of world building without pressing the whole thing into a restricting corset.</p>
+<h3>Starting out</h3>
+<p>You find yourself stranded on the Ring structure after a catastrophic failure of several systems of your small ship. Your mission was forward recon for the following starship on its way to establish a new colony on one of the planets in this solar system. They are however still far out, and you are left with no functioning propulsion system, nor communications. The existence of the Ring also was previously not known and came as a bit of a surprise. Even worse is the fact that you don't seem to be alone here after all.</p>
+<h3>Goal</h3>
+<p>Your overall goal is to find some means of communication with your home starship, both to disclose your position for rescue and to advise them of what you found out here. As you explore your surroundings, you hope you can decipher and analyze what you find and eventually learn to use the Ring infrastructure to establish communication.</p>
             ]]>
         </content>
     </entry>
