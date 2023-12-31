@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://lucem.github.io/blockyvoxels/chunk-storage-and-compression-ideas-request-for-comment.html",
+            "url": "https://lucem.github.io/blockyvoxels/chunk-storage-and-compression-ideas-request-for-comment.html",
+            "title": "Chunk storage and compression (ideas - request for comment)",
+            "summary": "How to compress Chunk Data? Chunks in raw form look a bit like this template &lt;typename TMaterialIndex&gt; struct Chunk { TMaterialIndex[][][] values; } // and&hellip;",
+            "content_html": "<h2>How to compress Chunk Data?</h2>\n<p>Chunks in raw form look a bit like this</p>\n<pre class=\"language-cpp\"><code>template\n&lt;typename TMaterialIndex&gt;\nstruct Chunk\n{\n  TMaterialIndex[][][] values;\n}\n\n// and convenient accessor functions </code></pre>\n<p>or, more appropriately, like this</p>\n<pre class=\"language-cpp\"><code>template\n&lt;typename TMaterialIndex&gt;\nstruct Chunk\n{\n  // flattened array of Dim X * Y * Z\n  TMaterialIndex[] values;\n}\n\n// and convenient accessor functions </code></pre>\n<p>or, fancy, with a union</p>\n<pre class=\"language-cpp\"><code>template\n&lt;typename TMaterialIndex&gt;\nstruct Chunk\n{\n  union \n  {\n    // 3D array representation with Dim [X][Y][Z]\n    TMaterialIndex[][][] values3D;\n    // flat array representation with Dim [X * Y * Z]\n    TMaterialIndex[] valuesFlat;\n  }\n}\n\n// and convenient accessor functions </code></pre>\n<p>which is pretty good for runtime acces to data in memory, but quite large for storage.</p>\n<h2>Compression methods</h2>\n<p>Two immediate ideas come to my mind when thinking about compressing that data.</p>\n<h3>Common stuff for both methods</h3>\n<p>In every case, it is helpful to decompose this by material.</p>\n<pre class=\"language-cpp\"><code>struct BinaryChunk\n{\nunion\n{\n  bool[][][] values3D;\n  bool[] valuesFlat;\n}\n\ntemplate\n&lt;typename TMaterialIndex&gt;\nint getIntFor(TMaterialIndex indexValue)\n{\n  // some means of converting whatever TMaterialIndex is to a unique Integer ID\n  // can be just a cast in reality, this is just to illustrate and hint at the concept\n}\n\nstruct Dictionary\n{\n  // for each int -&gt; TMaterialIndex, we get one BinaryChunk\n  BinaryChunk[];\n}</code></pre>\n<p>So, we get a representation for each Material that tells us whether a given voxel is of that Material or not.</p>\n<h3>Run-Length Encoding</h3>\n<p>For RLE, we can just further condense these booleans into a simple array of bitmasks,<br>and use simple run length encoding to produce a compressed versions.</p>\n<h3>Sparse Voxel Octrees</h3>\n<p>For SVOs, we create an Octree where the leaf nodes hold a Boolean values telling us whether the enclosed volume is of a given Material or not.</p>\n<p>We can then serialize that Octree to get a sparse representation.</p>\n<h2>Doing both and selecting by compressed size</h2>\n<p>This approach has the advantage of using the best compression result for any given input, at the expense of using more memory (and wasting some) and running both compression algorithms. We simply use both compression methods, look at the size of the produced data, and store one extra piece of information for each Material about the representation of the serialized data.</p>\n<p>This way, we can ensure that we optimize for size, but at the expense of possibly significant runtime overhead.</p>\n<p> </p>",
+            "author": {
+                "name": "lucem"
+            },
+            "tags": [
+            ],
+            "date_published": "2023-12-31T12:59:53+01:00",
+            "date_modified": "2023-12-31T12:59:53+01:00"
+        },
+        {
             "id": "https://lucem.github.io/blockyvoxels/data-transformation-rendering.html",
             "url": "https://lucem.github.io/blockyvoxels/data-transformation-rendering.html",
             "title": "Data transformation - Rendering",

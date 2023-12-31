@@ -3,12 +3,102 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-31T12:04:07+01:00</updated>
+    <updated>2023-12-31T12:59:53+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
     <id>https://lucem.github.io/blockyvoxels</id>
 
+    <entry>
+        <title>Chunk storage and compression (ideas - request for comment)</title>
+        <author>
+            <name>lucem</name>
+        </author>
+        <link href="https://lucem.github.io/blockyvoxels/chunk-storage-and-compression-ideas-request-for-comment.html"/>
+        <id>https://lucem.github.io/blockyvoxels/chunk-storage-and-compression-ideas-request-for-comment.html</id>
+
+        <updated>2023-12-31T12:59:53+01:00</updated>
+            <summary>
+                <![CDATA[
+                    How to compress Chunk Data? Chunks in raw form look a bit like this template &lt;typename TMaterialIndex&gt; struct Chunk { TMaterialIndex[][][] values; } // and&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2>How to compress Chunk Data?</h2>
+<p>Chunks in raw form look a bit like this</p>
+<pre class="language-cpp"><code>template
+&lt;typename TMaterialIndex&gt;
+struct Chunk
+{
+  TMaterialIndex[][][] values;
+}
+
+// and convenient accessor functions </code></pre>
+<p>or, more appropriately, like this</p>
+<pre class="language-cpp"><code>template
+&lt;typename TMaterialIndex&gt;
+struct Chunk
+{
+  // flattened array of Dim X * Y * Z
+  TMaterialIndex[] values;
+}
+
+// and convenient accessor functions </code></pre>
+<p>or, fancy, with a union</p>
+<pre class="language-cpp"><code>template
+&lt;typename TMaterialIndex&gt;
+struct Chunk
+{
+  union 
+  {
+    // 3D array representation with Dim [X][Y][Z]
+    TMaterialIndex[][][] values3D;
+    // flat array representation with Dim [X * Y * Z]
+    TMaterialIndex[] valuesFlat;
+  }
+}
+
+// and convenient accessor functions </code></pre>
+<p>which is pretty good for runtime acces to data in memory, but quite large for storage.</p>
+<h2>Compression methods</h2>
+<p>Two immediate ideas come to my mind when thinking about compressing that data.</p>
+<h3>Common stuff for both methods</h3>
+<p>In every case, it is helpful to decompose this by material.</p>
+<pre class="language-cpp"><code>struct BinaryChunk
+{
+union
+{
+  bool[][][] values3D;
+  bool[] valuesFlat;
+}
+
+template
+&lt;typename TMaterialIndex&gt;
+int getIntFor(TMaterialIndex indexValue)
+{
+  // some means of converting whatever TMaterialIndex is to a unique Integer ID
+  // can be just a cast in reality, this is just to illustrate and hint at the concept
+}
+
+struct Dictionary
+{
+  // for each int -&gt; TMaterialIndex, we get one BinaryChunk
+  BinaryChunk[];
+}</code></pre>
+<p>So, we get a representation for each Material that tells us whether a given voxel is of that Material or not.</p>
+<h3>Run-Length Encoding</h3>
+<p>For RLE, we can just further condense these booleans into a simple array of bitmasks,<br>and use simple run length encoding to produce a compressed versions.</p>
+<h3>Sparse Voxel Octrees</h3>
+<p>For SVOs, we create an Octree where the leaf nodes hold a Boolean values telling us whether the enclosed volume is of a given Material or not.</p>
+<p>We can then serialize that Octree to get a sparse representation.</p>
+<h2>Doing both and selecting by compressed size</h2>
+<p>This approach has the advantage of using the best compression result for any given input, at the expense of using more memory (and wasting some) and running both compression algorithms. We simply use both compression methods, look at the size of the produced data, and store one extra piece of information for each Material about the representation of the serialized data.</p>
+<p>This way, we can ensure that we optimize for size, but at the expense of possibly significant runtime overhead.</p>
+<p> </p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Data transformation - Rendering</title>
         <author>
