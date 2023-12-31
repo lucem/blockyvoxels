@@ -19,9 +19,11 @@
                 "name": "lucem"
             },
             "tags": [
+                   "ideas",
+                   "engine"
             ],
             "date_published": "2023-12-31T12:59:53+01:00",
-            "date_modified": "2023-12-31T13:01:45+01:00"
+            "date_modified": "2023-12-31T13:10:52+01:00"
         },
         {
             "id": "https://lucem.github.io/blockyvoxels/data-transformation-rendering.html",
@@ -33,9 +35,11 @@
                 "name": "lucem"
             },
             "tags": [
+                   "ideas",
+                   "engine"
             ],
             "date_published": "2023-12-31T12:01:05+01:00",
-            "date_modified": "2023-12-31T12:01:05+01:00"
+            "date_modified": "2023-12-31T13:10:45+01:00"
         },
         {
             "id": "https://lucem.github.io/blockyvoxels/space-partitioning-for-real.html",
@@ -47,9 +51,11 @@
                 "name": "lucem"
             },
             "tags": [
+                   "ideas",
+                   "engine"
             ],
             "date_published": "2023-12-31T07:12:21+01:00",
-            "date_modified": "2023-12-31T12:04:07+01:00"
+            "date_modified": "2023-12-31T13:10:36+01:00"
         },
         {
             "id": "https://lucem.github.io/blockyvoxels/what-the-game-might-be.html",
@@ -61,9 +67,12 @@
                 "name": "lucem"
             },
             "tags": [
+                   "info and overview",
+                   "ideas",
+                   "game"
             ],
             "date_published": "2023-12-30T12:32:01+01:00",
-            "date_modified": "2023-12-31T11:31:25+01:00"
+            "date_modified": "2023-12-31T13:10:28+01:00"
         },
         {
             "id": "https://lucem.github.io/blockyvoxels/space-partitioning-overview.html",
@@ -75,9 +84,12 @@
                 "name": "lucem"
             },
             "tags": [
+                   "info and overview",
+                   "ideas",
+                   "engine"
             ],
             "date_published": "2023-12-30T11:43:22+01:00",
-            "date_modified": "2023-12-30T15:16:13+01:00"
+            "date_modified": "2023-12-31T13:10:19+01:00"
         },
         {
             "id": "https://lucem.github.io/blockyvoxels/if-anyone-cares-how-this-blog-works.html",
@@ -89,9 +101,10 @@
                 "name": "lucem"
             },
             "tags": [
+                   "info and overview"
             ],
             "date_published": "2023-12-30T10:51:57+01:00",
-            "date_modified": "2023-12-30T10:51:57+01:00"
+            "date_modified": "2023-12-31T13:10:06+01:00"
         },
         {
             "id": "https://lucem.github.io/blockyvoxels/so-blocky-voxels.html",
@@ -103,9 +116,10 @@
                 "name": "lucem"
             },
             "tags": [
+                   "info and overview"
             ],
             "date_published": "2023-12-30T10:27:04+01:00",
-            "date_modified": "2023-12-30T15:14:31+01:00"
+            "date_modified": "2023-12-31T13:09:56+01:00"
         }
     ]
 }
