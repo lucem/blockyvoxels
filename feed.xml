@@ -3,7 +3,7 @@
     <title>Blocky voxels and other fun things</title>
     <link href="https://lucem.github.io/blockyvoxels/feed.xml" rel="self" />
     <link href="https://lucem.github.io/blockyvoxels" />
-    <updated>2023-12-31T12:59:53+01:00</updated>
+    <updated>2023-12-31T13:01:45+01:00</updated>
     <author>
         <name>lucem</name>
     </author>
@@ -17,7 +17,7 @@
         <link href="https://lucem.github.io/blockyvoxels/chunk-storage-and-compression-ideas-request-for-comment.html"/>
         <id>https://lucem.github.io/blockyvoxels/chunk-storage-and-compression-ideas-request-for-comment.html</id>
 
-        <updated>2023-12-31T12:59:53+01:00</updated>
+        <updated>2023-12-31T13:01:45+01:00</updated>
             <summary>
                 <![CDATA[
                     How to compress Chunk Data? Chunks in raw form look a bit like this template &lt;typename TMaterialIndex&gt; struct Chunk { TMaterialIndex[][][] values; } // and&hellip;
@@ -95,7 +95,8 @@ struct Dictionary
 <h2>Doing both and selecting by compressed size</h2>
 <p>This approach has the advantage of using the best compression result for any given input, at the expense of using more memory (and wasting some) and running both compression algorithms. We simply use both compression methods, look at the size of the produced data, and store one extra piece of information for each Material about the representation of the serialized data.</p>
 <p>This way, we can ensure that we optimize for size, but at the expense of possibly significant runtime overhead.</p>
-<p> </p>
+<h2>Other alternatives? Let me know</h2>
+<p>If there are other approaches to this, let me know, I'm open for ideas.</p>
             ]]>
         </content>
     </entry>
